@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+type SubjectDetails {
+   subjectName  String
+   lectureHours Int
+}
+
+model Teacher {
+    id                 String   @id @default(auto()) @map("_id") @db.ObjectId  
+    name               String
+    designation        String
+    subjects            SubjectDetails[]
+    isClassTeacher     Boolean  @default(false)
+    class              String?
+    section            String?
+    isTimeTableCreated Boolean  @default(false)
+    createdAt          DateTime @default(now())  
+}
