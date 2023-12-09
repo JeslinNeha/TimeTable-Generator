@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { TeacherModule } from './teacher/teacher.module';
 import { ClassModule } from './class/class.module';
 import { TeacherTimeTableModule } from './teacherTimeTable/teacher-time-table/teacher-time-table.module';
-import { ClassTimeTableModule } from './class-time-table/class-time-table.module';
+import { ClassTimeTableModule } from './classTimeTable/class-time-table.module';
 
 
 @Module({
