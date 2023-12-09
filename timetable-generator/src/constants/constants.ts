@@ -1,7 +1,7 @@
 const CREATE_TIME_TABLE="CREATE TIME TABLE";
 const CLASS_TIME_TABLE="CLASS TIME TABLE";
 const TEACHER_TIME_TABLE="TEACHER TIME TABLE";
-const DESIGNATIONS=["B.T","Secondigrade","TFA","SMC","SSA"];
+const DESIGNATIONS=["B.T","Secondigrade","TFI","SMC","SSA"];
 const CLASSES=["6","7","8"];
 const SECTIONS=["A","B"];
 
