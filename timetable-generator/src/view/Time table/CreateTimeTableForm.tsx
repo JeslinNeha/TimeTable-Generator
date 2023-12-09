@@ -19,7 +19,7 @@ import {
 } from "../../constants/constants";
 import { Class } from "../../types/class";
 
-const CreateTimeTable = () => {
+const CreateTimeTableForm = () => {
   const [classData, setClassData] = useState<Class>({
     selectedClass: "",
     section: "",
@@ -220,7 +220,7 @@ const CreateTimeTable = () => {
             onClick={openSubjectForm}
             className={classes.buttonStyle}
           >
-            Assign Subjects
+            ASSIGN SUBJECTS
           </Button>
           <Button
             variant="contained"
@@ -232,7 +232,7 @@ const CreateTimeTable = () => {
             onClick={createTimeTable}
             className={classes.buttonStyle}
           >
-            Create TimeTable
+            CREATE TIME TABLE
           </Button>
         </div>
       </div>
@@ -240,4 +240,4 @@ const CreateTimeTable = () => {
   );
 };
 
-export default CreateTimeTable;
+export default CreateTimeTableForm;

@@ -6,12 +6,11 @@ import {
 import themes from "./themes/themes";
 import routes from "./routes/index";
 import { Navigate, Route, Routes } from "react-router-dom";
-import MainLayout from "./layout/Main Layout/index";
 import ViewTeacher from "./view/Teacher details/ViewTeacher";
 import TeacherForm from "./view/Teacher details/TeacherForm";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import CreateTimeTable from "./view/Time table/CreateTimeTable";
+import CreateTimeTableForm from "./view/Time table/CreateTimeTableForm";
 import SubjectForm from "./view/Time table/SubjectForm";
 import "./App.css";
 import TimeTableTemplate from "./components/TimeTableTemplate";
@@ -39,7 +38,7 @@ function App() {
           <Route element={<TeacherForm />} path={routes.ADD_TEACHER} />
           <Route element={<TeacherForm />} path={routes.EDIT_TEACHER} />
           <Route element={<ViewTeacher />} path={routes.VIEW_TEACHER} />
-          <Route element={<CreateTimeTable />} path={routes.CREATE_TIMETABLE} />
+          <Route element={<CreateTimeTableForm />} path={routes.CREATE_TIMETABLE} />
           <Route element={<SubjectForm />} path={routes.ASSIGN_SUBJECTS} />
           <Route element={<ClassTimeTableForm />} path={routes.CLASS} />
           <Route element={<TimeTableTemplate />} path={routes.CLASS_TIMETABLE} />
