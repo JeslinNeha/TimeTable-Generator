@@ -2,9 +2,13 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TeacherModule } from './teacher/teacher.module';
+import { ClassModule } from './class/class.module';
+import { TeacherTimeTableModule } from './teacherTimeTable/teacher-time-table/teacher-time-table.module';
+import { ClassTimeTableModule } from './class-time-table/class-time-table.module';
+
 
 @Module({
-  imports: [TeacherModule],
+  imports: [TeacherModule, ClassModule,TeacherTimeTableModule, ClassTimeTableModule],
   controllers: [AppController],
   providers: [AppService],
 })

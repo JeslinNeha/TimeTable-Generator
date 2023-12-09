@@ -13,16 +13,68 @@ datasource db {
 type SubjectDetails {
    subjectName  String
    lectureHours Int
+   teacherName  String?
+}
+
+type periodInfo {
+  period  String
+  class   String
+}
+
+type classPeriodInfo {
+  period       String
+  subjectName  String
+  teacherName  String
+}
+
+type ScheduleInfo {
+   day      String
+   periods  periodInfo[]
+}
+
+type ClassScheduleInfo {
+   day      String
+   periods  classPeriodInfo[]
 }
 
 model Teacher {
     id                 String   @id @default(auto()) @map("_id") @db.ObjectId  
     name               String
     designation        String
-    subjects            SubjectDetails[]
     isClassTeacher     Boolean  @default(false)
     class              String?
-    section            String?
-    isTimeTableCreated Boolean  @default(false)
+    section            String
     createdAt          DateTime @default(now())  
+
+    @@unique(name)
+}
+
+model Class {
+   id                 String   @id @default(auto()) @map("_id") @db.ObjectId  
+   class              String
+   section            String
+   subjects           SubjectDetails[]
+   classTeacherName   String
+
+    @@unique([class, section], name: "UniqueClassSection")
+}
+
+
+model TeacherTimeTable {
+  id                     String          @id @default(auto()) @map("_id") @db.ObjectId 
+  teacherName            String
+  teacherScheduleInfo    ScheduleInfo[]
+
+   @@unique(teacherName)
+}
+
+
+model ClassTimeTable {
+  id                   String               @id @default(auto()) @map("_id") @db.ObjectId 
+  class                String
+  section              String
+  name                 String
+  classScheduleInfo    ClassScheduleInfo[]
+
+  @@unique([class, section], name: "UniqueClassSection")
 }
