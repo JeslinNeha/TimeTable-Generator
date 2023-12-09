@@ -49,9 +49,6 @@ export class ClassTimeTableController {
         selectedClass,
         selectedSection,
       );
-      if (!result) {
-        throw new NotFoundException();
-      }
       return res.send(result);
     } catch (error) {
       if (error instanceof NotFoundException) {
